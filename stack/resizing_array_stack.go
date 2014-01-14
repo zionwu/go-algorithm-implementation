@@ -22,7 +22,7 @@ type ResizingArrayStackIterator struct {
 }
 
 // return the Stack interface 
-func New() Stack {
+func NewResizingArrayStack() Stack {
     stack := new(ResizingArrayStack)
     stack.stack = make([]interface{}, default_size)
     stack.n = 0

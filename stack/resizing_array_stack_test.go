@@ -8,8 +8,8 @@ import (
 
 
 // Test whether it implements the Stack inferface 
-func TestNewStack(t *testing.T) {
-    s := New();
+func TestNewResizingArrayStack(t *testing.T) {
+    s := NewResizingArrayStack();
     if s.Size() != 0 {
         t.Fatalf("The initial size of the stack should be 0");
     }
@@ -44,8 +44,8 @@ func TestNewStack(t *testing.T) {
 }
 
 // Test for the interanl implementation logic
-func TestStackImplementation(t *testing.T) {
-    ns := New();
+func TestResizingArrayStackImplementation(t *testing.T) {
+    ns := NewResizingArrayStack();
     s := ns.(*ResizingArrayStack)
     if s.Size() != 0 {
         t.Fatalf("The initial size of the stack should be 0");
@@ -99,8 +99,8 @@ func TestStackImplementation(t *testing.T) {
 }
 
 // Test for Iterator of the ResizingArrayStack
-func TestIterator(t *testing.T) {
-    ns := New()
+func TestResizingArrayStackIterator(t *testing.T) {
+    ns := NewResizingArrayStack()
     s := ns.(*ResizingArrayStack)
     iter := s.NewIterator()
     s.Push(1)
