@@ -6,7 +6,19 @@ The algorithm implementation in Golang
 2. Introduction to Algorithms  
 
 
-1. Algorithm 
+Book One: Algorithms
 
-Chapter 1
-algorithm 1.1 [https://github.com/zionwu/go-algorithm-implementation/blob/master/collection/resizing_array_stack.go]
+
+Chapter 1  
+
+1. algorithm 1.1 [Resizing Array Stack](https://github.com/zionwu/go-algorithm-implementation/blob/master/collection/resizing_array_stack.go)  
+2. algorithm 1.2 [Linked List Stack](https://github.com/zionwu/go-algorithm-implementation/blob/master/collection/linked_list_queue.go)  
+3. algorithm 1.3 [Queue](https://github.com/zionwu/go-algorithm-implementation/blob/master/collection/linked_list_queue.go)  
+4. algorithm 1.4 Bag
+5. algorithm 1.5 [union-find] (https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/weighted_quick_union_find.go)   
+
+
+Chapter 2  
+
+1. algorithm 2.1 [Selection sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/selection_sort.go)  
+2. algorithm 2.2 [Insertion sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/insertion_sort.go)  
