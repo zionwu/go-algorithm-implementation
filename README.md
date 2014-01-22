@@ -23,3 +23,4 @@ Chapter 2
 1. algorithm 2.1 [Selection sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/selection_sort.go)  
 2. algorithm 2.2 [Insertion sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/insertion_sort.go)  
 3. algorithm 2.3 [Shell sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/shell_sort.go)  
+4. algorithm 2.4 [Merge sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/merge_sort.go)  
