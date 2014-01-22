@@ -33,7 +33,7 @@ func TestSelectionSort(t *testing.T) {
         items[i] = item;
     }
 
-    selection_sort(items)
+    SelectionSort(items)
 
     for i := 0; i < 9; i++ {
         if items[i].(*Item).val > items[i+1].(*Item).val {
@@ -53,7 +53,28 @@ func TestInsertionSort(t *testing.T) {
         items[i] = item;
     }
 
-    insertion_sort(items)
+    InsertionSort(items)
+
+    for i := 0; i < 9; i++ {
+        if items[i].(*Item).val > items[i+1].(*Item).val {
+            t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
+        }
+    }
+
+}
+
+// Test shell sort
+func TestShellSort(t *testing.T) {
+    items := make([]Comparable, 10)
+    var item *Item
+    for i := 0; i < 10; i++ {
+        rand.Seed(42)
+        item = new(Item)
+        item.val = rand.Int()
+        items[i] = item;
+    }
+
+    ShellSort(items)
 
     for i := 0; i < 9; i++ {
         if items[i].(*Item).val > items[i+1].(*Item).val {

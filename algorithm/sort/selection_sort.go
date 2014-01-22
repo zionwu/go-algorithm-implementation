@@ -1,7 +1,7 @@
 package sort
 
 //The implementation for selection sort
-func selection_sort(items []Comparable) {
+func SelectionSort(items []Comparable) {
     var min Comparable
     for i, _ := range items {
         min = items[i]

@@ -1,14 +1,29 @@
 package sort
 
-func selection_sort(items []Comparable) {
-    var min Comparable
-    for i, _ := range items {
-        min = items[i]
-        for j := i+1; j < len(items); j++ {
-            if items[j].CompareTo(min) < 0 {
-                min = items[j]
+func ShellSort(items []Comparable) {
+    h := 1
+    for h < len(items){
+        h =  3 * h + 1
+    }
+
+    for h >= 1 {
+        for i := h; i < len(items); i++ {
+            tmp := items[i]
+            j := i
+            for ; j > h-1; j = j - h {
+                if tmp.CompareTo(items[j - h]) < 0 {
+                    items[j] = items[j-h]
+                } else {
+                    items[j] = tmp
+                    break
+                }
             }
+
+            if (j <= h-1) {
+                items[j] = tmp
+            }
+
         }
-        items[i] = min
+        h = h/3
     }
 }
