@@ -60,7 +60,6 @@ func TestInsertionSort(t *testing.T) {
             t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
         }
     }
-
 }
 
 // Test shell sort
@@ -75,6 +74,46 @@ func TestShellSort(t *testing.T) {
     }
 
     ShellSort(items)
+
+    for i := 0; i < 9; i++ {
+        if items[i].(*Item).val > items[i+1].(*Item).val {
+            t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
+        }
+    }
+}
+
+// Test top-down merge sort
+func TestMergeSortTD(t *testing.T) {
+    items := make([]Comparable, 10)
+    var item *Item
+    for i := 0; i < 10; i++ {
+        rand.Seed(42)
+        item = new(Item)
+        item.val = rand.Int()
+        items[i] = item;
+    }
+
+    MergeSortTD(items)
+
+    for i := 0; i < 9; i++ {
+        if items[i].(*Item).val > items[i+1].(*Item).val {
+            t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
+        }
+    }
+}
+
+// Test bottom-up merge sort
+func TestMergeSortBU(t *testing.T) {
+    items := make([]Comparable, 10)
+    var item *Item
+    for i := 0; i < 10; i++ {
+        rand.Seed(42)
+        item = new(Item)
+        item.val = rand.Int()
+        items[i] = item;
+    }
+
+    MergeSortBU(items)
 
     for i := 0; i < 9; i++ {
         if items[i].(*Item).val > items[i+1].(*Item).val {
