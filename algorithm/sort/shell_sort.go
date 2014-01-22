@@ -2,7 +2,7 @@ package sort
 
 func ShellSort(items []Comparable) {
     h := 1
-    for h < len(items){
+    for h < len(items) / 3 {
         h =  3 * h + 1
     }
 
