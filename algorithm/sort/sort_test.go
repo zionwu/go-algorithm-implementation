@@ -120,5 +120,24 @@ func TestMergeSortBU(t *testing.T) {
             t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
         }
     }
+}
 
+// Test quick sort
+func TestQuickSort(t *testing.T) {
+    items := make([]Comparable, 10)
+    var item *Item
+    for i := 0; i < 10; i++ {
+        rand.Seed(42)
+        item = new(Item)
+        item.val = rand.Int()
+        items[i] = item;
+    }
+
+    QuickSort(items)
+
+    for i := 0; i < 9; i++ {
+        if items[i].(*Item).val > items[i+1].(*Item).val {
+            t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
+        }
+    }
 }
