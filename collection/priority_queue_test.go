@@ -27,7 +27,6 @@ func TestPriorityQueue(t *testing.T) {
     items := make([]sort.Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -43,7 +42,7 @@ func TestPriorityQueue(t *testing.T) {
     }
 
     for i := 0; i < 9; i++ {
-        if items[i].(*Item).val > items[i+1].(*Item).val {
+        if items[i].(*Item).val < items[i+1].(*Item).val {
             t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
         }
     }

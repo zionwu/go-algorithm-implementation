@@ -26,3 +26,4 @@ Chapter 2
 4. algorithm 2.4 [Merge sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/merge_sort.go)  
 5. algorithm 2.5 [Quick sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/quick_sort.go)  
 5. algorithm 2.6 [Priority Queue](https://github.com/zionwu/go-algorithm-implementation/blob/master/collection/priority_queue.go)  
+5. algorithm 2.6 [Heap sort](https://github.com/zionwu/go-algorithm-implementation/blob/master/algorithm/sort/heap_sort.go)  

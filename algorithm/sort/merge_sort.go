@@ -29,7 +29,7 @@ func MergeSortTD(items []Comparable) {
 // private method, which is run recursively
 func merge_sort_topdown(a []Comparable, t[]Comparable,
                         low int, high int) {
-    if high >= low {
+    if high <= low {
         return;
     }
     mid := low + (high - low)/2
@@ -42,28 +42,25 @@ func merge_sort_topdown(a []Comparable, t[]Comparable,
 func merge(a []Comparable, t[]Comparable, low int, mid int, high int) {
     i := low
     j := mid + 1
-    k := low
-    for ; k <= high; k++ {
+    var k int
+
+    for k=low; k <= high; k++ {
         t[k] = a[k]
     }
 
-    for k <= high {
-        if a[i].CompareTo(a[j]) <= 0 {
-            a[k] = t[i]
-            k++
-            i++
-        } else if a[i].CompareTo(a[j]) > 0 {
+    for k=low; k <= high; k++ {
+        if i > mid {
             a[k] = t[j]
-            k++
-            j++
-        } else if i > mid {
-            a[k] = t[j]
-            k++
             j++
         } else if j > high {
             a[k] = t[i]
-            k++
             i++
+        } else if t[i].CompareTo(t[j]) <= 0 {
+            a[k] = t[i]
+            i++
+        } else if t[i].CompareTo(t[j]) > 0 {
+            a[k] = t[j]
+            j++
         }
     }
 }

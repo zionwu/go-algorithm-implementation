@@ -27,7 +27,6 @@ func TestSelectionSort(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -47,7 +46,6 @@ func TestInsertionSort(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -67,7 +65,6 @@ func TestShellSort(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -87,7 +84,6 @@ func TestMergeSortTD(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -107,7 +103,6 @@ func TestMergeSortBU(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -127,7 +122,6 @@ func TestQuickSort(t *testing.T) {
     items := make([]Comparable, 10)
     var item *Item
     for i := 0; i < 10; i++ {
-        rand.Seed(42)
         item = new(Item)
         item.val = rand.Int()
         items[i] = item;
@@ -137,6 +131,25 @@ func TestQuickSort(t *testing.T) {
 
     for i := 0; i < 9; i++ {
         if items[i].(*Item).val > items[i+1].(*Item).val {
+            t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
+        }
+    }
+}
+
+// Test heap sort
+func TestHeapSort(t *testing.T) {
+    items := make([]Comparable, 10)
+    var item *Item
+    for i := 0; i < 10; i++ {
+        item = new(Item)
+        item.val = rand.Int()
+        items[i] = item;
+    }
+
+    HeapSort(items)
+
+    for i := 0; i < 9; i++ {
+        if items[i].(*Item).val < items[i+1].(*Item).val {
             t.Fatalf("The item %v should be less then item %v", items[i].(*Item).val, items[i+1].(*Item).val)
         }
     }
